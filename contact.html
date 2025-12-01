@@ -1,0 +1,59 @@
+
+<!-- ========== FILE: contact.html ========== -->
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Formulari de contacte">
+  <title>Contacte</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Nom<span class="dot">.</span></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inici</a></li>
+          <li><a href="projects.html">Projectes</a></li>
+          <li><a href="contact.html">Contacte</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Contacte</h1>
+    <form id="contactForm" novalidate>
+      <label>Nom complet
+        <input type="text" name="name" required minlength="2" placeholder="Nom i cognoms">
+      </label>
+
+      <label>Email
+        <input type="email" name="email" required placeholder="exemple@domini.cat">
+      </label>
+
+      <label>Telèfon (opcional)
+        <input type="tel" name="phone" pattern="^[0-9+\-() ]{6,20}$" placeholder="+34 600 000 000">
+      </label>
+
+      <label>Missatge
+        <textarea name="message" required minlength="10" placeholder="El teu missatge..."></textarea>
+      </label>
+
+      <button class="btn" type="submit">Envia</button>
+      <p id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year4"></span> Nom Cognoms.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>
+

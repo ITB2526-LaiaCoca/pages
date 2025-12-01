@@ -1,0 +1,113 @@
+
+<!-- ========== FILE: assets/css/styles.css ========== -->
+/* Reset bàsic */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.4;color:#111}
+.container{max-width:1000px;margin:0 auto;padding:1rem}
+.site-header{background:#fafafa;border-bottom:1px solid #eee}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
+.logo{font-weight:700;text-decoration:none;color:#111}
+.logo .dot{color:#0077cc}
+.main-nav ul{list-style:none;display:flex;gap:1rem}
+.main-nav a{text-decoration:none;padding:0.4rem 0.6rem;border-radius:6px;display:inline-block}
+.main-nav a:hover{background:#f0f0f0}
+.mobile-menu-btn{display:none;background:none;border:none;font-size:1.2rem}
+.hero{display:flex;gap:1rem;align-items:center;padding:2rem 0}
+.hero-photo .photo-placeholder{width:140px;height:140px;border-radius:50%;background:#eee;display:flex;align-items:center;justify-content:center}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.card{padding:1rem;border:1px solid #eee;border-radius:8px}
+.card-link{text-decoration:none;display:inline-block;margin-top:0.5rem}
+.btn{display:inline-block;padding:0.5rem 0.9rem;background:#0077cc;color:#fff;border-radius:8px;text-decoration:none}
+.link-as-btn{display:inline-block;padding:0.35rem 0.6rem;border:1px solid #0077cc;border-radius:6px;text-decoration:none}
+.site-footer{border-top:1px solid #eee;padding:1rem 0;margin-top:2rem}
+.photo-placeholder, .thumb{background:#fafafa;border:1px dashed #ddd;padding:1rem;border-radius:6px}
+
+/* Responsive */
+@media(max-width:700px){
+  .grid{grid-template-columns:1fr}
+  .hero{flex-direction:column;text-align:center}
+  .main-nav{display:none}
+  .mobile-menu-btn{display:inline-block}
+  .main-nav.open{display:block;background:#fff;padding:0.5rem;border-radius:6px;position:absolute;right:1rem;top:60px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+}
+
+/* Links com botons que canvien d'aspecte a hover (demanat) */
+a.card-link, a.link-as-btn{transition:transform .15s ease,box-shadow .15s ease}
+a.card-link:hover,a.link-as-btn:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+
+/* Formulari */
+form label{display:block;margin:0.6rem 0}
+input,textarea{width:100%;padding:0.5rem;border:1px solid #ddd;border-radius:6px}
+#formMsg{margin-top:0.6rem}
+
+
+<!-- ========== FILE: assets/js/scripts.js ========== -->
+// Funcionalitats JS (mínim 3 segons l'enunciat)
+document.addEventListener('DOMContentLoaded',function(){
+  // 1) Any - actualitza l'any al footer
+  const years = document.querySelectorAll('#year,#year2,#year3,#year4');
+  years.forEach(el=>el.textContent=new Date().getFullYear());
+
+  // 2) Mobile menu toggle
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const nav = document.getElementById('mainNav');
+  if(mobileBtn && nav){
+    mobileBtn.addEventListener('click',()=>{
+      nav.classList.toggle('open');
+      // accessible label
+      const opened = nav.classList.contains('open');
+      mobileBtn.setAttribute('aria-expanded', opened.toString());
+    });
+  }
+
+  // 3) Filtrar projectes (projects.html)
+  const search = document.getElementById('searchProjects');
+  const list = document.getElementById('projectsList');
+  if(search && list){
+    search.addEventListener('input',()=>{
+      const q = search.value.trim().toLowerCase();
+      Array.from(list.children).forEach(li=>{
+        const text = li.textContent.toLowerCase();
+        li.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  }
+
+  // 4) Formulari de contacte: validació bàsica i "simulació" d'enviament
+  const form = document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      const msg = document.getElementById('formMsg');
+      if(!form.checkValidity()){
+        // mostrar errors nadius
+        form.reportValidity();
+        msg.textContent = 'Si us plau, completa els camps obligatoris correctament.';
+        return;
+      }
+      // simulació d'enviament (no fa petició real)
+      msg.textContent = 'Enviant...';
+      setTimeout(()=>{
+        msg.textContent = 'Missatge enviat. Gràcies!';
+        form.reset();
+      },800);
+    });
+  }
+
+  // 5) Carregar dades del projecte seguint query param (project-detail.html)
+  const projTitle = document.getElementById('projTitle');
+  if(projTitle){
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id') || 'first';
+    // dades d'exemple; reemplaçar per les reals
+    const projects = {
+      'a':{title:'Projecte A',tech:'HTML, CSS, JS',desc:'Detall del projecte A...'},
+      'b':{title:'Projecte B',tech:'React, API',desc:'Detall del projecte B...'},
+      'first':{title:'Projecte Primer',tech:'HTML, CSS',desc:'Detall del projecte primer...'}
+    };
+    const p = projects[id] || projects['first'];
+    projTitle.textContent = p.title;
+    document.getElementById('projTech').textContent = 'Tecnologies: ' + p.tech;
+    document.getElementById('projDesc').querySelector('p').textContent = p.desc;
+  }
+});

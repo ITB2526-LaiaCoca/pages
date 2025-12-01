@@ -1,1 +1,141 @@
-<div> hola</div>
+<!--
+Plantilla de portfoli personal per a l'activitat.
+Contingut del fitxer: diversos fitxers concatenats per copiar/pegar:
+- index.html
+- project-detail.html
+- projects.html
+- contact.html
+- assets/css/styles.css
+- assets/js/scripts.js
+
+També inclou un arbre d'etiquetes i un esbós ASCII per facilitar el disseny previ.
+-->
+
+<!-- ========== ARBRE D'ETIQUETES (arrel: <main>) ========== -->
+<!--
+<main>
+  <section id="hero">            (presentació, foto, frase)
+  <section id="featured">        (2 projectes destacats -> article)
+  <section id="about">           (info personal)
+  <aside id="skills">            (llista habilitats)
+  <section id="projects-preview">(preview projecte llarg)
+  <section id="contact-preview"> (enllaç al formulari)
+</main>
+<header> logo + nav </header>
+<footer> info de copyright + xarxes </footer>
+-->
+
+<!-- ========== ESBÓS RÀPID (ASCII) ========== -->
+<!--
++-----------------------------------------------------------+
+| HEADER: Logo | Home | Projects | Contact                   |
++-----------------------------------------------------------+
+| HERO: Nom / Rol                                         [ ]|
+|       Descripció breu  [Foto circular]                    |
++-----------------------------------------------------------+
+| FEATURED:  [Projecte A]   [Projecte B]  (enllaç a detall)  |
++-----------------------------------------------------------+
+| ABOUT | SKILLS | PROJECTS LIST (enllaç a /projects.html)   |
++-----------------------------------------------------------+
+| FOOTER: Copyright | LinkedIn | GitHub                      |
++-----------------------------------------------------------+
+-->
+
+<!-- ========== FILE: index.html ========== -->
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Portfoli personal - Nom de l'estudiant">
+  <meta name="author" content="Nom de l'estudiant">
+  <title>Portfoli — Nom</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Nom<span class="dot">.</span></a>
+      <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Obrir menú">☰</button>
+      <nav id="mainNav" class="main-nav">
+        <ul>
+          <li><a href="index.html">Inici</a></li>
+          <li><a href="projects.html">Projectes</a></li>
+          <li><a href="contact.html">Contacte</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero container">
+      <div class="hero-text">
+        <h1>Hola — Sóc <strong>Nom Cognoms</strong></h1>
+        <p class="lead">Desenvolupador web / Estudiant CFGS / Dissenyador de projectes</p>
+        <p>Especialitzat en projectes frontend, PWA i experiències responsives.</p>
+        <p><a class="btn" href="projects.html">Veure tots els projectes</a></p>
+      </div>
+      <div class="hero-photo" aria-hidden="true">
+        <div class="photo-placeholder">Foto</div>
+      </div>
+    </section>
+
+    <section id="featured" class="container featured">
+      <h2>Projectes destacats</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Projecte A</h3>
+          <p>Descripció curta del projecte A. Tecnologies: HTML, CSS, JS.</p>
+          <a class="card-link" href="project-detail.html?id=a">Veure detall →</a>
+        </article>
+        <article class="card">
+          <h3>Projecte B</h3>
+          <p>Descripció curta del projecte B. Tecnologies: React, API.</p>
+          <a class="card-link" href="project-detail.html?id=b">Veure detall →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>Sobre mi</h2>
+      <p>Sóc estudiant i m'interessa la programació web. Aquí va una breu biografia amb objectius professionals.</p>
+    </section>
+
+    <aside id="skills" class="container skills">
+      <h3>Habilitats</h3>
+      <ul>
+        <li>HTML5 / Semàntica</li>
+        <li>CSS3 / Flexbox / Grid</li>
+        <li>JavaScript (DOM, Fetch, ES6+)</li>
+      </ul>
+    </aside>
+
+    <section id="projects-preview" class="container projects-preview">
+      <h2>Tots els projectes</h2>
+      <p>Primer projecte del llistat (enllaç al detall):</p>
+      <ul>
+        <li><a href="project-detail.html?id=first">Projecte Primer (enllaç)</a></li>
+        <li>Projecte 2</li>
+        <li>Projecte 3</li>
+      </ul>
+      <p><a class="link-as-btn" href="projects.html">Veure llistat complet</a></p>
+    </section>
+
+    <section id="contact-preview" class="container contact-preview">
+      <h2>Vols contactar?</h2>
+      <p><a class="btn" href="contact.html">Envia'm un missatge</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Nom Cognoms. Tots els drets reservats.</p>
+      <p class="socials"><!-- icones textuals -->
+        <a href="#" aria-label="GitHub">GitHub</a> · <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>
