@@ -52,7 +52,7 @@ header {
 }
 
 /* Bloques con 3 div dentro */
-.bloque {
+.project {
     flex: 1;
     display: flex;
     flex-direction: column;
