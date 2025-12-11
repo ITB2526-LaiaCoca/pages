@@ -60,12 +60,21 @@ header {
     gap: 15px;
 }
 
-.item, .img, .titleProject {
+.img, .titleProject {
     background: #ddd;
     padding: 20px;
     text-align: center;
     border: 1px solid #bbb;
 }
+
+.item{
+    background: #ddd;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #bbb;
+    width: 40%;
+}
+
 
 /* Footer */
 footer {
