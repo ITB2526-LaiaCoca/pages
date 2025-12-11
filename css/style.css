@@ -27,47 +27,33 @@ header {
     text-align: center;
     border: 1px solid black;
     margin: 20px;
-    margin-bottom:0;
+    margin-bottom: 0;
+}
+
+/* ==== CONTENEDOR DE PÁGINA ==== */
+.pagina {
+    display: flex;             /* flex para alinear menú y main al lado */
+    gap: 20px;                 /* espacio entre menú y contenido */
+    margin: 20px;
+    flex: 1;
 }
 
 /* ==== MENU LATERAL ==== */
 .menu-lateral {
     width: 220px;
-    position: fixed;
-    overflow-y: auto;
     border: 1px solid black;
-}
-
-.menu-lateral ul {
-    list-style: none;
-    padding: 0;
-}
-
-.menu-lateral li {
-    padding: 12px;
-    border-bottom: 1px solid black;
-}
-
-.menu-lateral a {
-    text-decoration: none;
-    color: inherit;
+    height: 50vh;             /* altura fija si quieres */
+    padding: 10px;
 }
 
 /* ==== CONTENEDOR PRINCIPAL ==== */
-main {
-    flex: 1;
-    padding: 20px;
+main.contenedor-principal {
+    flex: 1;                   /* ocupa todo el espacio restante */
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap;           /* permite que varios proyectos bajen si no caben */
+    padding:0;
 }
-
-.pagina {
-    margin: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
 
 /* ==== BLOQUES DE PROYECTO ==== */
 .project {
@@ -107,4 +93,5 @@ footer {
     text-align: center;
     margin-top: auto;
     border: 1px solid black;
+    height: 10vh;
 }
