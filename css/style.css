@@ -1,9 +1,22 @@
-body {
+/* ==== BASE ==== */
+html, body {
+    height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
 }
 
-/* Header */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* El contenido empuja al footer */
+main {
+    flex: 1;
+}
+
+/* ==== HEADER ==== */
 header {
     background: #4a8af4;
     color: white;
@@ -18,14 +31,14 @@ header {
     text-align: center;
 }
 
-/* Nav lateral */
+/* ==== MENU LATERAL ==== */
 .menu-lateral {
     width: 200px;
     background: #333;
     color: white;
-    position: absolute;
+    position: fixed;
     top: 120px;
-    bottom: 60px;
+    bottom: 0;
     left: 0;
 }
 
@@ -43,15 +56,16 @@ header {
     text-decoration: none;
 }
 
-/* Contenedor principal a la derecha del nav */
+/* ==== CONTENEDOR PRINCIPAL ==== */
 .contenedor-principal {
-    margin-left: 220px;
+    margin-left: 220px; /* espacio para el menú */
     padding: 20px;
     display: flex;
     gap: 20px;
+    max-height: 50vh;
 }
 
-/* Bloques con 3 div dentro */
+/* ==== BLOQUES DE PROYECTO ==== */
 .project {
     border: 1px solid #ccc;
     flex: 1;
@@ -60,29 +74,33 @@ header {
     gap: 15px;
 }
 
-.img, .titleProject {
+.titleProject {
     background: #ddd;
     padding: 20px;
     text-align: center;
     border: 1px solid #bbb;
+    width: 100%;
 }
 
-.item{
+.contenidoProject {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.img, .item {
     background: #ddd;
     padding: 20px;
     text-align: center;
     border: 1px solid #bbb;
-    width: 40%;
+    width: 45%;
 }
 
-
-/* Footer */
+/* ==== FOOTER ==== */
 footer {
     background: #222;
     color: white;
     padding: 15px;
     text-align: center;
-    margin-top: 20px;
-    bottom: 0;
 }
-
