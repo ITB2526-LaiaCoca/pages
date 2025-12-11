@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background: #4a8af4;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Texto debajo del título */
+.subtitulo {
+    background: #e5e5e5;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Nav lateral */
+.menu-lateral {
+    width: 200px;
+    background: #333;
+    color: white;
+    position: absolute;
+    top: 120px;
+    bottom: 60px;
+    left: 0;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-lateral li {
+    padding: 12px;
+}
+
+.menu-lateral a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Contenedor principal a la derecha del nav */
+.contenedor-principal {
+    margin-left: 220px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Bloques con 3 div dentro */
+.bloque {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.item {
+    background: #ddd;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #bbb;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
