@@ -43,16 +43,18 @@ header {
     width: 220px;
     border: 1px solid black;
     height: 50vh;             /* altura fija si quieres */
-    padding: 10px;
+    padding: 0px;
 }
 
 /* ==== CONTENEDOR PRINCIPAL ==== */
 main.contenedor-principal {
-    flex: 1;                   /* ocupa todo el espacio restante */
+    flex: 1;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;           /* permite que varios proyectos bajen si no caben */
     padding:0;
+    margin-left: 50px;
+    margin-right:150px;
 }
 
 /* ==== BLOQUES DE PROYECTO ==== */
