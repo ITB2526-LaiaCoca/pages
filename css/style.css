@@ -11,35 +11,31 @@ body {
     min-height: 100vh;
 }
 
-/* El contenido empuja al footer */
-main {
-    flex: 1;
-}
-
 /* ==== HEADER ==== */
 header {
-    background: #4a8af4;
-    color: white;
-    padding: 20px;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    border: 1px solid black;
 }
 
 /* Texto debajo del título */
 .subtitulo {
-    background: #e5e5e5;
     padding: 15px;
     text-align: center;
+    border: 1px solid black;
+    margin: 20px;
+    margin-bottom:0;
 }
 
 /* ==== MENU LATERAL ==== */
 .menu-lateral {
-    width: 200px;
-    background: #333;
-    color: white;
+    width: 220px;
     position: fixed;
-    top: 120px;
-    bottom: 0;
-    left: 0;
+    overflow-y: auto;
+    border: 1px solid black;
 }
 
 .menu-lateral ul {
@@ -49,37 +45,45 @@ header {
 
 .menu-lateral li {
     padding: 12px;
+    border-bottom: 1px solid black;
 }
 
 .menu-lateral a {
-    color: white;
     text-decoration: none;
+    color: inherit;
 }
 
 /* ==== CONTENEDOR PRINCIPAL ==== */
-.contenedor-principal {
-    margin-left: 220px; /* espacio para el menú */
+main {
+    flex: 1;
     padding: 20px;
     display: flex;
     gap: 20px;
-    max-height: 50vh;
+    flex-wrap: wrap;
 }
+
+.pagina {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* ==== BLOQUES DE PROYECTO ==== */
 .project {
-    border: 1px solid #ccc;
-    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    height: 50vh;
+    max-height: 50vh;
+    flex: 1;
+    border: 1px solid black;
 }
 
 .titleProject {
-    background: #ddd;
     padding: 20px;
     text-align: center;
-    border: 1px solid #bbb;
-    width: 100%;
+    border: 1px solid black;
 }
 
 .contenidoProject {
@@ -87,20 +91,20 @@ header {
     gap: 15px;
     justify-content: center;
     align-items: center;
+    flex: 1;
 }
 
 .img, .item {
-    background: #ddd;
     padding: 20px;
     text-align: center;
-    border: 1px solid #bbb;
     width: 45%;
+    border: 1px solid black;
 }
 
 /* ==== FOOTER ==== */
 footer {
-    background: #222;
-    color: white;
     padding: 15px;
     text-align: center;
+    margin-top: auto;
+    border: 1px solid black;
 }
