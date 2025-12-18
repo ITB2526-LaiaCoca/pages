@@ -8,46 +8,44 @@ document.addEventListener("DOMContentLoaded", () => {
     projects.forEach(project => {
         project.addEventListener("mouseenter", () => {
             project.style.transform = "translateY(-4px)";
-            project.style.boxShadow = "0 8px 16px rgba(0,0,0,0.25)";
+            project.style.boxShadow = "0 12px 32px rgba(0,0,0,0.2)";
         });
 
         project.addEventListener("mouseleave", () => {
             project.style.transform = "translateY(0)";
-            project.style.boxShadow = "0 4px 8px rgba(0,0,0,0.15)";
+            project.style.boxShadow = "0 8px 32px rgba(0,0,0,0.1)";
         });
     });
 
     /* =========================
-       EFECTO HOVER EN NAV COMO PROJECT
+       EFECTO HOVER EN NAV
        ========================= */
     const nav = document.querySelector(".menu-lateral");
 
     nav.addEventListener("mouseenter", () => {
         nav.style.transform = "translateY(-4px)";
-        nav.style.boxShadow = "0 8px 16px rgba(0,0,0,0.25)";
+        nav.style.boxShadow = "0 12px 32px rgba(0,0,0,0.2)";
     });
 
     nav.addEventListener("mouseleave", () => {
         nav.style.transform = "translateY(0)";
-        nav.style.boxShadow = "0 4px 8px rgba(0,0,0,0.15)";
+        nav.style.boxShadow = "0 8px 32px rgba(0,0,0,0.1)";
     });
 
     /* =========================
-       BRILLO AERO EN IMG Y ITEM
+       EFECTO HOVER EN IMG Y ITEM
        ========================= */
     const hoverBlocks = document.querySelectorAll(".img, .item");
 
     hoverBlocks.forEach(block => {
         block.addEventListener("mouseenter", () => {
-            block.style.background =
-                "linear-gradient(to bottom, #ffffff, #e6f0ff)";
-            block.style.borderColor = "#7aa7d9";
+            block.style.transform = "translateY(-4px)";
+            block.style.boxShadow = "0 12px 32px rgba(0,0,0,0.2)";
         });
 
         block.addEventListener("mouseleave", () => {
-            block.style.background =
-                "linear-gradient(to bottom, #ffffff, #edf2f8)";
-            block.style.borderColor = "#aab6c3";
+            block.style.transform = "translateY(0)";
+            block.style.boxShadow = "0 8px 32px rgba(0,0,0,0.1)";
         });
     });
 
@@ -64,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         item.addEventListener("mouseup", () => {
             item.style.transform = "translateY(0)";
-            item.style.boxShadow = "inset 0 1px 0 #ffffff, 0 2px 4px rgba(0,0,0,0.1)";
+            item.style.boxShadow = "0 8px 32px rgba(0,0,0,0.1)";
         });
     });
 
@@ -77,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         title.addEventListener("mouseenter", () => {
             title.style.transform = "translateY(-5px)";
             title.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
-            title.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+            title.style.boxShadow = "0 8px 32px rgba(0,0,0,0.15)";
         });
 
         title.addEventListener("mouseleave", () => {
