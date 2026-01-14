@@ -1,20 +1,59 @@
-/* ==== BASE ==== */
-html, body {
+/* Base */
+html,
+body {
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Verdana, Arial, sans-serif;
 }
 
-/* ==== FONDO PRINCIPAL ==== */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-y: auto;
   color: #ffffff;
   background-color: #100000;
   background-size: cover;
 }
 
+/* Animaciones y transiciones */
+.explanation,
+.imgs,
+.menu-lateral,
+.img,
+.item,
+.titleExplanation {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.enter {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+@media (hover: hover) {
+  .explanation:hover,
+  .imgs:hover,
+  .menu-lateral:hover,
+  .img:hover,
+  .item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .titleExplanation:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Enlaces */
 .menu-lateral a {
   color: inherit;
   text-decoration: none;
@@ -25,7 +64,7 @@ body {
   font-weight: bold;
 }
 
-/* ==== EFECTO GLASSMORPHISM GLOBAL ==== */
+/* Efecto glass */
 .glass {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -43,7 +82,7 @@ body {
   transform: translateY(-4px);
 }
 
-/* ==== HEADER ==== */
+/* Header */
 header {
   height: 20vh;
   display: flex;
@@ -54,53 +93,48 @@ header {
   border-radius: 15px;
 }
 
-/* ==== HEADER H1 ==== */
 header h1 {
   font-size: 2.5em;
-  color: #ffffff;
-  text-align: center;
   margin: 0;
+  text-align: center;
+  color: #ffffff;
 }
 
-/* ==== SUBTITULO ==== */
+/* Subtítulo */
 .subtitulo {
   padding: 15px;
   margin: 20px;
   margin-bottom: 0;
   text-align: center;
+  color: #ffffff;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  color: #ffffff;
 }
 
-/* ==== CONTENEDOR DE PÁGINA ==== */
+/* Layout principal */
 .pagina {
   display: flex;
-  gap: 20px;
-  margin: 20px;
   flex: 1;
+  margin: 20px;
 }
 
-/* ==== CONTENEDOR PRINCIPAL ==== */
 main.contenedor-principal {
   flex: 1;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
 
-/* ==== MENU LATERAL ==== */
+/* Menú lateral */
 .menu-lateral {
-  width: 150px;
+  width: 15vw;
   height: 47.5vh;
   padding: 12px;
+  margin-right: 10px;
   font-size: 14px;
   color: #ffffff;
   background: rgba(255, 255, 255, 0.2);
@@ -108,27 +142,27 @@ main.contenedor-principal {
   border-radius: 15px;
   backdrop-filter: blur(10px) saturate(180%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  margin-right: 10px;
 }
 
-/* ==== PROYECTOS ==== */
+ul {
+  padding-inline-start: 2vw;
+}
+
+/* Bloque explicación */
 .explanation {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  flex: 1 1 30%;
   height: 50vh;
-  flex: 1;
+  color: #ffffff;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   backdrop-filter: blur(10px) saturate(180%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  color: #ffffff;
 }
 
-/* ==== TITULO PROYECTO ==== */
+/* Título del proyecto */
 .titleExplanation {
   padding: 12px;
   text-align: center;
@@ -138,23 +172,22 @@ main.contenedor-principal {
   border-radius: 12px;
 }
 
-/* ==== IMÁGENES ==== */
+/* Contenedor de imágenes */
 .imgs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 10px;
+  flex: 176;
   height: 50vh;
-  flex: 3;
+  place-items: center;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   backdrop-filter: blur(10px) saturate(180%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  place-items: center;
 }
 
-/* ==== ITEM E IMG ==== */
+/* Items e imágenes */
 .item,
 .img {
   width: 85%;
@@ -162,20 +195,20 @@ main.contenedor-principal {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #ffffff;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
-  color: #ffffff;
 }
 
-/* ==== FOOTER ==== */
+/* Footer */
 footer {
   height: 10vh;
   padding: 15px 20px;
-  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  color: #ffffff;
   position: relative;
   background: rgba(255, 255, 255, 0.2);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -202,64 +235,86 @@ footer {
   transform: scale(1.1);
 }
 
-/* ==== MEDIA QUERIES PARA PANTALLAS PEQUEÑAS (MÓVILES) ==== */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.8em;
-  }
-
-  .subtitulo {
-    padding: 10px;
-    margin: 10px;
-  }
-
-  .pagina {
-    flex-direction: column;
-    margin: 10px;
-  }
-
-  .menu-lateral {
-    width: 100%;
-    height: auto;
-    font-size: 12px;
-  }
-
-  main.contenedor-principal {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .project, .explanation {
-    flex: 1 1 100%;
-    margin-bottom: 10px;
-  }
-
-  .img, .item {
-    width: 100%;
-    height: auto;
-  }
-
-  .imgs {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ==== MEDIA QUERIES PARA PANTALLAS MÁS GRANDES (TABLETS Y ESCRITORIOS) ==== */
-@media (min-width: 769px) {
-  .menu-lateral {
-    width: 220px;
-    height: auto;
-  }
-
+/* Responsive 1000px */
+@media (max-width: 1000px) {
   .pagina {
     flex-direction: row;
   }
 
-  .project, .explanation {
-    flex: 1 1 45%;
+  main.contenedor-principal {
+    flex-direction: column;
+  }
+
+  .explanation {
+    height: 10vh;
+    width: 75vw;
   }
 
   .imgs {
-    grid-template-columns: 1fr 1fr;
+    height: 1000vh;
+    width: 75vw;
   }
+}
+
+/* Responsive 700px */
+@media (max-width: 700px) {
+  html,
+  body {
+    height: auto;
+  }
+
+  .pagina {
+    flex-direction: column;
+    margin-top: 5px;
+  }
+
+  .menu-lateral {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 7vh;
+    margin: 0 0 20px;
+    padding: 0;
+  }
+
+  main.contenedor-principal {
+    margin: 0;
+  }
+
+  .explanation {
+    height: 30vh;
+    width: 100%;
+    flex: none;
+  }
+
+  .imgs {
+    width: 100%;
+    height: 100vh;
+    padding-top: 2vh;
+    flex: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .img {
+    width: 70%;
+  }
+  
+  footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  padding:0;
+  }
+
+  .footer-content p {
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+
 }
