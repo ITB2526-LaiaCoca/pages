@@ -58,7 +58,9 @@ body {
   background-attachment: fixed;   /* se queda fija al hacer scroll */
 }
 
-
+img{
+  max-height: 20vh;
+}
 
 /* Efecto glass */
 .glass {
@@ -123,7 +125,7 @@ header {
 /* Menú lateral */
 .navegador {
   width: 15vw;
-  height: 47.5vh;
+  height: 45vh;
   padding: 12px;
   margin-right: 10px;
   font-size: 14px;
@@ -140,13 +142,14 @@ header {
   display: flex;
   flex-direction: column;
   flex: 1 1 30%;
-  height: 50vh;
+  height: 48vh;
   color: #100000;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   backdrop-filter: blur(10px) saturate(180%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
 
 /* Título del proyecto */
@@ -212,29 +215,9 @@ footer {
   transition: transform 0.3s ease;
 }.footer-logo:hover { transform: scale(1.1); }
 
-/* Responsive 1000px */
+
+
 @media (max-width: 1000px) {
-  .pagina {
-    flex-direction: row;
-  }
-
-  main.contenedor-principal {
-    flex-direction: column;
-  }
-
-  .explanation {
-    height: 10vh;
-    width: 75vw;
-  }
-
-  .imgs {
-    height: 1000vh;
-    width: 75vw;
-  }
-}
-
-/* Responsive 700px */
-@media (max-width: 700px) {
   html, body { height: auto; }
 
   .pagina {
@@ -255,7 +238,7 @@ footer {
   main.contenedor-principal {
     margin: 0;
   } .explanation {
-    height: 30vh;
+    height: 37vh;
     width: 100%;
     flex: none;
   }
