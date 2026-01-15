@@ -1,62 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página solicitada</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/index.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página solicitada</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/index.js"></script>
 
-</head>
-<body>
-    <header>
-        <h1>Título Principal</h1>
-    </header>
-
-    <div class="subtitulo">
-        <p>Este es el texto debajo del título</p>
-    </div>
-
-    <div class="pagina" >
-
-
-        <nav class="menu-lateral">
-            <ul>
-                <li>
-                    <a href="html/project1.html">Proyecto 1</a>
-                </li>
-            </ul>
-        </nav>
-
-        <main class="contenedor-principal">
-
-            <div class="project">
-                <div class="titleProject">titleProject</div>
-                    <div class="contenidoProject">
-                        <div class="item">item</div>
-                        <div class="img">img</div>
-                    </div>
-            </div>
-
-            <div class="project">
-                <div class="titleProject">titleProject</div>
-                    <div class="contenidoProject">
-                        <div class="item">item</div>
-                        <div class="img">img</div>
-                    </div>
-            </div>
-
-        </main>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <p>Footer de la página</p>
-            <img src="https://aceptaelreto.com/pub/inst/1371-4089lkj1.png" alt="Logo aceptAelreto" class="footer-logo">
+    </head>
+    <body>
+        <header> <h1>COCA'S PORTFOLIO</h1> </header>
+        <div class="subtitle"> <p>hi this is my portfolio</p> </div>
+        <div class="page" >
+            <nav class="navegador">
+                <ul>
+                    <li> <a href="index.html">Main Page</a> </li>
+                    <li> <a href="html/project1.html">Project 1</a> </li>
+                    <li> <a href="html/project2.html">Project 2</a> </li>
+                    <li> <a href="html/allProjects.html">All Projects</a> </li>
+                    <li> <a href="html/contactForm.html">Contact Form</a> </li>
+                </ul>
+            </nav>
+            <main class="contenedor-principal">
+                <div class="projectDIV">
+                    <div class="projectTitle"><a href="html/project1.html">Project 1: Password Checker</a></div>
+                        <div class="projectContent">
+                            <div class="projectDescription">A tool that evaluates password strength.</div>
+                            <div class="projectImage"> <img src="img/project1.png"></div>
+                        </div>
+                </div>
+                <div class="projectDIV">
+                    <div class="projectTitle"><a href="html/project2.html">Project 2: Login Simulator</a></div>
+                        <div class="projectContent">
+                            <div class="projectDescription">A fake login page to practice spotting phishing attempts.</div>
+                            <div class="projectImage"> <img src="img/project2.jpg"></div>
+                        </div>
+                </div>
+            </main>
         </div>
-    </footer>
-
-
-
-</body>
+        <footer>
+            <div class="footerContent">
+                <p>Footer</p>
+                <img src="img/logo.png" alt="Logo ITB" class="footerLogo">
+            </div>
+        </footer>
+    </body>
 </html>

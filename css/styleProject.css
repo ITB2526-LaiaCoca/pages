@@ -1,52 +1,35 @@
 /* Base */
-html,
-body {
+html,body {
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Verdana, Arial, sans-serif;
-}
-
-body {
+}body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-y: auto;
-  color: #ffffff;
+  color: #100000;
   background-color: #100000;
   background-size: cover;
 }
 
 /* Animaciones y transiciones */
-.explanation,
-.imgs,
-.menu-lateral,
-.img,
-.item,
-.titleExplanation {
+.explanation, .imgs, .navegador, .img, .item, .titleExplanation {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.enter {
+}.enter {
   opacity: 0;
   transform: translateY(12px);
-}
-
-.enter-active {
+}.enter-active {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 @media (hover: hover) {
-  .explanation:hover,
-  .imgs:hover,
-  .menu-lateral:hover,
-  .img:hover,
-  .item:hover {
+  .explanation:hover, .imgs:hover, .navegador:hover, .img:hover, .item:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
   }
-
   .titleExplanation:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
@@ -54,15 +37,28 @@ body {
 }
 
 /* Enlaces */
-.menu-lateral a {
+a {
   color: inherit;
   text-decoration: none;
   font-weight: normal;
-}
-
-.menu-lateral a:hover {
+}a:hover {
   font-weight: bold;
 }
+
+.navegador li {
+  margin-bottom: 20px; 
+  font-size: large;
+}
+
+body {
+  background-image: url('../img/wallpaper.png'); /* pon aquí la ruta de tu imagen */
+  background-repeat: no-repeat;   /* que no se repita */
+  background-size: cover;         /* que cubra toda la pantalla */
+  background-position: center;    /* centrada */
+  background-attachment: fixed;   /* se queda fija al hacer scroll */
+}
+
+
 
 /* Efecto glass */
 .glass {
@@ -73,9 +69,7 @@ body {
   -webkit-backdrop-filter: blur(10px) saturate(180%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-}
-
-.glass:hover {
+}.glass:hover {
   background: rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
@@ -85,19 +79,18 @@ body {
 /* Header */
 header {
   height: 20vh;
+    min-height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 0 1px 0 #ffffff;
-  background: rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 0 #100000;
+  background: rgba(255, 255, 255, 0.685);
   border-radius: 15px;
-}
-
-header h1 {
+}header h1 {
   font-size: 2.5em;
   margin: 0;
   text-align: center;
-  color: #ffffff;
+  color: #100000;
 }
 
 /* Subtítulo */
@@ -106,7 +99,7 @@ header h1 {
   margin: 20px;
   margin-bottom: 0;
   text-align: center;
-  color: #ffffff;
+  color: #100000;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
@@ -119,9 +112,7 @@ header h1 {
   display: flex;
   flex: 1;
   margin: 20px;
-}
-
-main.contenedor-principal {
+}main.contenedor-principal {
   flex: 1;
   display: flex;
   gap: 10px;
@@ -130,23 +121,19 @@ main.contenedor-principal {
 }
 
 /* Menú lateral */
-.menu-lateral {
+.navegador {
   width: 15vw;
   height: 47.5vh;
   padding: 12px;
   margin-right: 10px;
   font-size: 14px;
-  color: #ffffff;
+  color: #100000;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   backdrop-filter: blur(10px) saturate(180%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-ul {
-  padding-inline-start: 2vw;
-}
+}ul { padding-inline-start: 2vw; }
 
 /* Bloque explicación */
 .explanation {
@@ -154,7 +141,7 @@ ul {
   flex-direction: column;
   flex: 1 1 30%;
   height: 50vh;
-  color: #ffffff;
+  color: #100000;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
@@ -167,7 +154,7 @@ ul {
   padding: 12px;
   text-align: center;
   font-weight: bold;
-  color: #ffffff;
+  color: #100000;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 12px;
 }
@@ -188,19 +175,17 @@ ul {
 }
 
 /* Items e imágenes */
-.item,
-.img {
+.item, .img {
   width: 85%;
   height: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #100000;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
 }
-
 /* Footer */
 footer {
   height: 10vh;
@@ -208,32 +193,24 @@ footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: #ffffff;
+  color: #100000;
   position: relative;
   background: rgba(255, 255, 255, 0.2);
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   backdrop-filter: blur(10px) saturate(180%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.footer-content p {
+}.footer-content p {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
   font-size: 14px;
-}
-
-.footer-logo {
+}.footer-logo {
   height: 40px;
   object-fit: contain;
   transition: transform 0.3s ease;
-}
-
-.footer-logo:hover {
-  transform: scale(1.1);
-}
+}.footer-logo:hover { transform: scale(1.1); }
 
 /* Responsive 1000px */
 @media (max-width: 1000px) {
@@ -258,17 +235,14 @@ footer {
 
 /* Responsive 700px */
 @media (max-width: 700px) {
-  html,
-  body {
-    height: auto;
-  }
+  html, body { height: auto; }
 
   .pagina {
     flex-direction: column;
     margin-top: 5px;
   }
 
-  .menu-lateral {
+  .navegador {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -280,9 +254,7 @@ footer {
 
   main.contenedor-principal {
     margin: 0;
-  }
-
-  .explanation {
+  } .explanation {
     height: 30vh;
     width: 100%;
     flex: none;
@@ -295,11 +267,7 @@ footer {
     flex: none;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-  }
-
-  .img {
-    width: 70%;
-  }
+  }.img { width: 70%; }
   
   footer {
   position: fixed;
@@ -309,12 +277,9 @@ footer {
   margin: 0;
   border-radius: 0;
   padding:0;
-  }
-
-  .footer-content p {
+  }.footer-content p {
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
   }
-
 }

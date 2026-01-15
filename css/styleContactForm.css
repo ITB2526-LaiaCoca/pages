@@ -1,0 +1,301 @@
+/* ==== BASE ==== */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Verdana, Arial, sans-serif;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+  color: #100000;
+  background-color: #100000;
+  background-size: cover;
+}
+
+body {
+  background-image: url('../img/wallpaper.png'); /* pon aquí la ruta de tu imagen */
+  background-repeat: no-repeat;   /* que no se repita */
+  background-size: cover;         /* que cubra toda la pantalla */
+  background-position: center;    /* centrada */
+  background-attachment: fixed;   /* se queda fija al hacer scroll */
+}
+
+
+/* Efecto glass */
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}.glass:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+/* ==== HEADER ==== */
+header {
+  height: 20vh;
+  min-height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 1px 0 #100000;
+  background: rgba(255, 255, 255, 0.685);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: #100000;
+  text-align: center;
+  margin: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+/* ==== SUBTITLE ==== */
+.subtitle {
+  padding: 15px;
+  margin: 20px;
+  margin-bottom: 0;
+  text-align: center;
+  color: #100000;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* ==== NAVIGATOR ==== */
+.navegador {
+  width: 20vw;
+  height: 47.5vh;
+  padding: 12px;
+  font-size: 14px;
+  color: #100000;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.navegador li {
+  margin-bottom: 20px; 
+  font-size: large;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+
+main.contenedor-principal,
+.projectDIV,
+.contactForm,
+.subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+
+/* ==== LINKS ==== */
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: normal;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+/* ==== MAIN CONTAINER ==== */
+.page {
+  display: flex;
+  margin: 20px;
+  flex: 1;
+}
+
+main.contenedor-principal {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 20px;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==== FORM ==== */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 90%;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+.contactForm label {
+  font-weight: bold;
+}
+
+.contactForm input,
+.contactForm textarea {
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #100000;
+  outline: none;
+  backdrop-filter: blur(5px) saturate(180%);
+  transition: all 0.3s ease;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  background: rgba(255, 255, 255, 0.801);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.02);
+}
+
+.contactForm button {
+  padding: 9px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  color: #100000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contactForm button:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.contactForm label {
+  font-weight: bold;
+}
+
+
+/* ==== PROJECT DIV ==== */
+.projectDIV {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 40vw;
+  height: 50vh;
+  flex: 1;
+  background: rgba(100, 143, 81, 0.568);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.projectDIV:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* ==== FOOTER ==== */
+footer {
+  height: 10vh;
+  padding: 15px 20px;
+  color: #100000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.footerContent p {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 14px;
+}
+
+.footerLogo {
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.footerLogo:hover {
+  transform: scale(1.1);
+}
+
+/* ==== ANIMACIONES ==== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: hover) {
+  .projectDIV:hover,
+  .contactForm button:hover,
+  .subtitle:hover,
+  .navegador li:hover {
+    cursor: pointer;
+  }
+}
+
+/* ==== MEDIA QUERIES ==== */
+@media (max-width: 1000px) {
+  .page { flex-direction: row; }
+  main.contenedor-principal { flex-direction: column; }
+}
+
+@media (max-width: 700px) {
+  html, body { height: auto; }
+  .page { flex-direction: column; margin-top: 5px; }
+  .navegador {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 7vh;
+    margin: 0 0 20px;
+    padding: 0;
+  }
+  main.contenedor-principal { margin: 0; }
+  .projectDIV { max-width: 90%; height: auto; margin-bottom: 10px; }
+  .contactForm { width: 95%; }
+  footer { position: fixed; bottom: 0; left: 0; width: 100%; margin: 0; border-radius: 0; padding:0; }
+}

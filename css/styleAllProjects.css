@@ -9,6 +9,7 @@ body {
   overflow-y: auto;
 }
 
+
 body {
   display: flex;
   flex-direction: column;
@@ -26,14 +27,14 @@ body {
   background-attachment: fixed;   /* se queda fija al hacer scroll */
 }
 
+
 /* ==== HEADER ==== */
 header {
-  height: 20vh;
-    min-height: 180px;
+  min-height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 0 1px 0 #ffffff63;
+  text-shadow: 0 1px 0 #100000;
   background: rgba(255, 255, 255, 0.685);
   border-radius: 15px;
 }
@@ -62,7 +63,7 @@ header h1 {
 /* ==== MENU LATERAL ==== */
 .navegador {
   width: 20vw;
-  height: 47.5vh;
+  align-self: stretch;
   padding: 12px;
   font-size: 14px;
   color: #100000;
@@ -73,6 +74,7 @@ header h1 {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   margin-right: 10px;
+
 }
 
 
@@ -121,7 +123,7 @@ main.contenedor-principal {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  height: 50vh;
+  height: 25vh;
   flex: 1;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -190,14 +192,9 @@ footer {
   font-size: 14px;
 }
 
-.footerLogo {
-  height: 40px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
 .projectImage {
-    width: 80%;       /* Ocupa todo el ancho del contenedor */
-    height: 20vh;     /* O la altura que quieras para tu proyecto */
+    width: 50%;       /* Ocupa todo el ancho del contenedor */
+    height: 10vh;     /* O la altura que quieras para tu proyecto */
     overflow: hidden;  /* Evita que la imagen se salga del div */
     border-radius: 15px;
 }
@@ -207,6 +204,13 @@ footer {
     height: 100%;      /* La imagen ocupa toda la altura del div */
     object-fit: cover; /* Ajusta la imagen para cubrir el div sin deformarse */
     display: block;    /* Evita espacios indeseados debajo de la imagen */
+}
+
+
+.footerLogo {
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .footerLogo:hover {
@@ -231,11 +235,15 @@ footer {
   transform: translateY(-4px);
 }
 
+.projectDIV {
+  flex: 1 1 calc(33.333% - 10px);
+  max-width: calc(33.333% - 10px);
+}
 
 /* ==== MEDIA QUERIES PARA PANTALLAS MÁS GRANDES (TABLETS Y ESCRITORIOS) ==== */
 @media (max-width: 1000px) {
   .navegador {
-    width: 220px;
+    width: 20%;
     height: auto;
   }
 
@@ -244,10 +252,21 @@ footer {
   }
 
   .projectDIV {
-    flex: 1 1 45%;
+    flex: 1 1 calc(50% - 10px);  /* 2 por fila */
+    max-width: calc(50% - 10px);  /* Asegúrate de cambiar también max-width */
+      font-size: small;
   }
 
   .projectImages {
     grid-template-columns: 1fr 1fr;
   }
+
+  .navegador li {
+  margin-bottom: 20px; 
+  font-size: small;
+  }
 }
+
+
+
+
